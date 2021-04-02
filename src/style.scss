@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+.container {
+    width: 1050px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    height: 80px;
+    background: #000;
+    color: #f1f1f1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 1vw;
+    &__logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background:rgba(110,157,255,1);
+    }
+    &__text {
+        font-size: 40px;
+        
+    }
+
+}
+
+.blocks {
+    &__fillters {
+        width: 80%;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    &__fillter {
+        color: #6B6E70;
+        font-size: 25px;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline #6B6E70;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1vw;
+        h2 {
+            letter-spacing: 2px;
+            font-family: 'Comfortaa';
+        }
+    }
+}
+
+.page {
+  min-height: 100vh;
+  background: rgb(228, 228, 228);
+}
+
+.wrapper {  
+  background: rgb(255, 255, 255);
+  padding: 15px 0;
+  box-shadow: 3px 5px 14px rgba(0, 0, 0, .5);
+  max-width: 1250px;
+  margin: 0 auto;
+  border-radius: 15px;
+  color: #ffff;
+  font-family: 'Franklin Gothic Medium', 'sArial Narrow', Arial, sans-serif;
+}
+
+.block {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  cursor: pointer;
+  position: relative;
+  transition: all .2s ease;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  &::after {
+    content: 'Copy';
+    position: absolute;
+    min-height: 20px;
+    text-align: center;
+    min-width: 120px;
+    border-radius: 20px;
+    opacity: 0;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    transition: all .2s ease;
+  }
+  &:hover::after {
+    opacity: 1;
+    z-index: 2;
+  }
+  &:hover::before {
+    z-index: 1;
+    content: '';
+    width: 100%;
+    height: 100%;
+    opacity: .35;
+    background: rgb(255, 255, 255);
+    position: absolute;
+  }
+  &.clicked::after {
+    content: 'Copyred';
+    transition: all .5s ease-in-out;
+  }
+}
+
